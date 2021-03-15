@@ -13,19 +13,12 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-/**
- * Configures the default Swagger Documentation
- */
 @Configuration
 @EnableSwagger2
 @Import(BeanValidatorPluginsConfiguration.class)
 public class Swagger2Config
 {
-    /**
-     * Configures what to document using Swagger
-     *
-     * @return A Docket which is the primary interface for Swagger configuration
-     */
+
     @Bean
     public Docket api()
     {
@@ -38,18 +31,13 @@ public class Swagger2Config
             .apiInfo(apiEndPointsInfo());
     }
 
-    /**
-     * Configures some information related to the Application for Swagger
-     *
-     * @return ApiInfo a Swagger object containing identification information for this application
-     */
     private ApiInfo apiEndPointsInfo()
     {
-        return new ApiInfoBuilder().title("Java Spring BE Foundation")
-            .description("Java Spring Backend Foundation and Scaffolding")
-            .contact(new Contact("John Mitchell",
+        return new ApiInfoBuilder().title("Java Spring BE APAX Weather")
+            .description("Java Spring Backend APAX Weather App")
+            .contact(new Contact("Gina Russell",
                 "http://www.lambdaschool.com",
-                "john@lambdaschool.com"))
+                "ginabeth.russell@gmail.com"))
             .license("MIT")
             .licenseUrl("https://github.com/LambdaSchool/java-springfoundation/blob/master/LICENSE")
             .version("1.0.0")

@@ -1,10 +1,10 @@
 package com.lambdaschool.foundation.services;
 
 import com.lambdaschool.foundation.exceptions.ResourceNotFoundException;
+import com.lambdaschool.foundation.models.Location;
 import com.lambdaschool.foundation.models.Role;
 import com.lambdaschool.foundation.models.User;
 import com.lambdaschool.foundation.models.UserRoles;
-import com.lambdaschool.foundation.models.Useremail;
 import com.lambdaschool.foundation.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -116,13 +116,12 @@ public class UserServiceImpl
                     addRole));
         }
 
-        newUser.getUseremails()
+        newUser.getLocations()
             .clear();
-        for (Useremail ue : user.getUseremails())
+        for (Location l : user.getLocations())
         {
-            newUser.getUseremails()
-                .add(new Useremail(newUser,
-                    ue.getUseremail()));
+            newUser.getLocations()
+                .add(new Location(l.getZipcode(), newUser));
         }
 
         return userrepos.save(newUser);
@@ -136,63 +135,52 @@ public class UserServiceImpl
     {
         User currentUser = findUserById(id);
 
-        // update own thing
-        // admin update
-        if (helperFunctions.isAuthorizedToMakeChange(currentUser.getUsername()))
+        if (user.getUsername() != null)
         {
-            if (user.getUsername() != null)
-            {
-                currentUser.setUsername(user.getUsername()
-                    .toLowerCase());
-            }
+            currentUser.setUsername(user.getUsername()
+                .toLowerCase());
+        }
 
-            if (user.getPassword() != null)
-            {
-                currentUser.setPasswordNoEncrypt(user.getPassword());
-            }
+        if (user.getPassword() != null)
+        {
+            currentUser.setPasswordNoEncrypt(user.getPassword());
+        }
 
-            if (user.getPrimaryemail() != null)
-            {
-                currentUser.setPrimaryemail(user.getPrimaryemail()
-                    .toLowerCase());
-            }
+        if (user.getPrimaryemail() != null)
+        {
+            currentUser.setPrimaryemail(user.getPrimaryemail()
+                .toLowerCase());
+        }
 
-            if (user.getRoles()
-                .size() > 0)
+        if (user.getRoles()
+            .size() > 0)
+        {
+            currentUser.getRoles()
+                .clear();
+            for (UserRoles ur : user.getRoles())
             {
+                Role addRole = roleService.findRoleById(ur.getRole()
+                    .getRoleid());
+
                 currentUser.getRoles()
-                    .clear();
-                for (UserRoles ur : user.getRoles())
-                {
-                    Role addRole = roleService.findRoleById(ur.getRole()
-                        .getRoleid());
-
-                    currentUser.getRoles()
-                        .add(new UserRoles(currentUser,
-                            addRole));
-                }
+                    .add(new UserRoles(currentUser,
+                        addRole));
             }
+        }
 
-            if (user.getUseremails()
-                .size() > 0)
+        if (user.getLocations()
+            .size() > 0)
+        {
+            currentUser.getLocations()
+                .clear();
+            for (Location l : user.getLocations())
             {
-                currentUser.getUseremails()
-                    .clear();
-                for (Useremail ue : user.getUseremails())
-                {
-                    currentUser.getUseremails()
-                        .add(new Useremail(currentUser,
-                            ue.getUseremail()));
-                }
+                currentUser.getLocations()
+                    .add(new Location(l.getZipcode(), currentUser));
             }
+        }
 
             return userrepos.save(currentUser);
-        } else
-        {
-            // note we should never get to this line but is needed for the compiler
-            // to recognize that this exception can be thrown
-            throw new ResourceNotFoundException("This user is not authorized to make change");
-        }
     }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
