@@ -111,7 +111,7 @@
     </dependencies>
 
     <build>
-        <finalName>jrmmba-stumps</finalName>
+        <finalName>gbr4477-apax-weather</finalName>
 
         <plugins>
             <plugin>
