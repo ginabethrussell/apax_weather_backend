@@ -10,6 +10,8 @@ public interface LocationService
 
     Location findLocationById(long locationid);
 
+    List<Location> findAllByUserId(long userid);
+
     void delete(long locationid);
 
     Location update(long locationid, String zipcode);

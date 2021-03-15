@@ -44,6 +44,13 @@ public class LocationServiceImpl
     }
 
     @Override
+    public List<Location> findAllByUserId(long userid)
+    {
+        List<Location> usersLocations = locationrepos.findLocationsByUser_Userid(userid);
+        return usersLocations;
+    }
+
+    @Override
     public void delete(long locationid)
     {
         if (locationrepos.findById(locationid)
