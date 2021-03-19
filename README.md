@@ -116,10 +116,10 @@ Custom swagger API documentation was generated using swagger annotations on java
 
 ### **_Authentication (for registration and login)_**
 
-| Method        | Endpoint           | Body (required)                       | Body (optional) | Notes                                             |
-| ------------- | ------------------ | ------------------------------------- | --------------- | ------------------------------------------------- |
-| register POST | /createnewuser | username, password, primaryemail | N/A             | Creates a new user object in the database, logs in user, returns an access_token for authentication        |
-| login POST    | /login    | username, password                    | N/A             | Returns an access_token for authentication |
+| Method        | Endpoint           | Body (required)                       | Notes                                             
+| ------------- | ------------------ | ------------------------------------- | ------------------------------------------------- |
+| register POST | /createnewuser | username, password, primaryemail | Creates a new user object in the database, logs in user, returns an access_token for authentication        |
+| login POST    | /login    | username, password                    Returns an access_token for authentication |
 
 ### **_OAUTH Authentication Sample POST Requests_**
 
@@ -167,34 +167,34 @@ Sample axiosWithAuth:
 
 ### **_Endpoints for the Users_**
 
-| Method                        | Endpoint                           | Body (required) | Body (optional) | Notes                                                            |
-| ------------- | ------------------ | ------------------------------------- | --------------- | ------------------------------------------------- |
-| get user GET    | /users/getuserinfo  | N/A             | N/A             | Fetches authenticated user      |
-| get all users GET  | /users/users | N/A             | N/A             | Fetches all users                  |
-| get user by userid GET   | /users/user/:userid  | N/A       | N/A             | Fetches user by userid  |
-| get user by username GET  | /users/user/name/:username  | N/A       | N/A             | Fetches user by username |
-| get user by like username GET | /users/user/name/like/:subname | N/A        | N/A             | Fetches users with subname in username |
-| add a new user POST  | /users/user    | username, primaryemail, password | N/A  | Adds a new user  |
-| update a full user PUT | /users/user/:userid | username, primaryemail, password   | N/A             | Updates entire user |
-| update a user with partial info PATCH   | /users/user/:userid   | username, primaryemail, password | N/A      | Updates the user  |
-| delete user by userid DELETE | /users/user/:userid | N/A     | N/A    | Deletes the user               |
+| Method                        | Endpoint                           | Body (required) |Notes                                                            |
+| ------------- | ------------------ | ------------------------------------- | ------------------------------------------------- |
+| get user GET    | /users/getuserinfo  | N/A             |  Fetches authenticated user      |
+| get all users GET  | /users/users | N/A             | Fetches all users                  |
+| get user by userid GET   | /users/user/:userid  | N/A       | Fetches user by userid  |
+| get user by username GET  | /users/user/name/:username  | N/A           | Fetches user by username |
+| get user by like username GET | /users/user/name/like/:subname | N/A        | Fetches users with subname in username |
+| add a new user POST  | /users/user    | username, primaryemail, password | Adds a new user  |
+| update a full user PUT | /users/user/:userid | username, primaryemail, password   | Updates entire user |
+| update a user with partial info PATCH   | /users/user/:userid   | username, primaryemail, password | Updates the user  |
+| delete user by userid DELETE | /users/user/:userid | N/A     | Deletes the user               |
 
 ### **_Endpoints for Locations_**
 
-| Method                        | Endpoint                           | Body (required) | Body (optional) | Notes                                                            |
-| ------------- | ------------------ | ------------------------------------- | --------------- | ------------------------------------------------- |
-| get all locations GET | /locations/locations  | N/A           | N/A             | Fetches all locations   |
-| get all locations for the user GET | /locations/getuserlocations  | N/A             | N/A             | Fetches locations added by user |
-| get location by locationid GET | /locations/location/:locationid  | N/A       | N/A             | Fetches location   |
-| add a new location POST | /locations/location/:userid/zipcode/:zipcode       | N/A | N/A | Adds location  |
-| update a location PUT | /locations/location/:locationid/zipcode/:zipcode | N/A | N/A | Updates the location |
-| delete location by locationid DELETE | /locations/location/:locationid | N/A           | N/A             | Deletes the location  |
+| Method                        | Endpoint                           | Body (required) | Notes                                                            |
+| ------------- | ------------------ | ------------------------------------- | ------------------------------------------------- |
+| get all locations GET | /locations/locations  | N/A           |  Fetches all locations   |
+| get all locations for the user GET | /locations/getuserlocations  | N/A             |  Fetches locations added by user |
+| get location by locationid GET | /locations/location/:locationid  | N/A       |  Fetches location   |
+| add a new location POST | /locations/location/:userid/zipcode/:zipcode       | N/A | Adds location  |
+| update a location PUT | /locations/location/:locationid/zipcode/:zipcode | N/A |  Updates the location |
+| delete location by locationid DELETE | /locations/location/:locationid | N/A                | Deletes the location  |
 
 ### **_Endpoints for Logout_**
 
-| Method                        | Endpoint                           | Body (required) | Body (optional) | Notes                                                            |
-| ------------- | ------------------ | ------------------------------------- | --------------- | ------------------------------------------------- |
-| logout user GET | /logout  | N/A           | N/A             | logs out user   |
+| Method                        | Endpoint                           | Body (required) | Notes                                                            |
+| ------------- | ------------------ | ------------------------------------- | ------------------------------------------------- |
+| logout user GET | /logout  | N/A           |  logs out user   |
 
 
 
