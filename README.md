@@ -1,4 +1,4 @@
-# My Weather App
+# Clear Weather App
 
 ## Table of Contents
 
@@ -10,22 +10,22 @@
 
 ## <a name="overview"></a>Overview
 
-My Weather App is a full stack web application that allows authorized and authenticated users to get weather information for US locations using 5-digit US zipcodes. 
+Clear Weather App is a full stack web application that allows authorized and authenticated users to get weather information for US locations using 5-digit US zipcodes. 
 
-### At My Weather App
+### With Clear Weather App
 1. A user can create a new account
 2. A user can login to his/her account
 3. A user can add a zipcode location
 4. A user can delete a zipcode location
 5. A user can view current weather information for all his/her locations
 
-My Weather is a full stack web application composed of a front end React SPA providing the user interface and a Java Spring Web REST API using a PostgreSQL database. The front end application is deployed with Netlify and the backend is deployed with Heroku.
+Clear Weather is a full stack web application composed of a front end React SPA providing the user interface and a Java Spring Web REST API using a PostgreSQL database. The front end application is deployed with Netlify and the backend is deployed with Heroku.
 
-[My Weather App Live Site](https://gbr-my-weather.netlify.app)
+[Clear Weather App Live Site](https://clear-weather.netlify.app)
 
-[My Weather App Front End GitHub Repo](https://github.com/ginabethrussell/apax_weather_frontend)
+[Clear Weather App Front End GitHub Repo](https://github.com/ginabethrussell/apax_weather_frontend)
 
-[My Weather App Back End BaseURL](https://gbr4477-apax-weather.herokuapp.com/)
+[Clear Weather App Back End BaseURL](https://gbr4477-apax-weather.herokuapp.com/)
 
 ## <a name="db-schema"></a>Database Schema
 
