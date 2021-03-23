@@ -51,9 +51,9 @@ public class SeedData
         r2 = roleService.save(r2);
 
         // admin, user
-        User u1 = new User("gina russell",
+        User u1 = new User("admin",
             "password",
-            "ginabeth.russell@gmail.com");
+            "admin@clearweather.com");
         u1.getRoles()
             .add(new UserRoles(u1,
                 r1));
@@ -62,13 +62,21 @@ public class SeedData
                 r2));
         u1.getLocations()
             .add(new Location( "40515", u1));
+        u1.getLocations()
+            .add(new Location( "96813", u1));
+        u1.getLocations()
+            .add(new Location( "33040", u1));
+        u1.getLocations()
+            .add(new Location( "04609", u1));
+        u1.getLocations()
+            .add(new Location( "99705", u1));
 
         userService.save(u1);
 
         // user
-        User u2 = new User("susannah russell",
-            "1234567",
-            "susannah@gmail.com");
+        User u2 = new User("user",
+            "password",
+            "user@gmail.com");
         u2.getRoles()
             .add(new UserRoles(u2,
                 r2));
@@ -80,19 +88,6 @@ public class SeedData
             .add(new Location( "37127", u2));
 
         userService.save(u2);
-
-        // user
-        User u3 = new User("matthew russell",
-            "ILuvM4th!",
-            "mbr4477@gmail.com");
-        u3.getRoles()
-            .add(new UserRoles(u3,
-                r2));
-        u3.getLocations()
-            .add(new Location( "40515", u3));
-        u3.getLocations()
-            .add(new Location( "77058", u3));
-        userService.save(u3);
 
     }
 }

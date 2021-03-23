@@ -33,10 +33,10 @@ public class Swagger2Config
 
     private ApiInfo apiEndPointsInfo()
     {
-        return new ApiInfoBuilder().title("Java Spring BE APAX Weather")
-            .description("Java Spring Backend APAX Weather App")
+        return new ApiInfoBuilder().title("Java Spring BE Clear Weather")
+            .description("Java Spring Backend Clear Weather App")
             .contact(new Contact("Gina Russell",
-                "http://www.lambdaschool.com",
+                "https://clear-weather.netlify.app/",
                 "ginabeth.russell@gmail.com"))
             .license("MIT")
             .licenseUrl("https://github.com/LambdaSchool/java-springfoundation/blob/master/LICENSE")

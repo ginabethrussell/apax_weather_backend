@@ -65,7 +65,6 @@ public class AuthorizationServerConfig
     {
         endpoints.tokenStore(tokenStore)
             .authenticationManager(authenticationManager);
-        // here instead of our clients requesting authentication at the endpoint /oauth/token, they request it at the endpoint /login
         endpoints.pathMapping("/oauth/token",
             "/login");
     }
