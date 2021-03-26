@@ -1,2 +1,6 @@
+com/lambdaschool/foundation/FoundationApplicationTesting.class
+com/lambdaschool/foundation/controllers/UserControllerIntegrationTest.class
+com/lambdaschool/foundation/services/UserServiceImplTestNoDB.class
+com/lambdaschool/foundation/controllers/LocationControllerIntegrationTest.class
+com/lambdaschool/foundation/services/LocationServiceImplTestNoDB.class
 com/lambdaschool/foundation/SeedData.class
-com/lambdaschool/foundation/FoundationApplication.class

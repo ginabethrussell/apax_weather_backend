@@ -1,2 +1,6 @@
-/Users/ginabethrussell/Desktop/apax-weather-app/src/test/java/com/lambdaschool/foundation/FoundationApplication.java
+/Users/ginabethrussell/Desktop/apax-weather-app/src/test/java/com/lambdaschool/foundation/controllers/LocationControllerIntegrationTest.java
+/Users/ginabethrussell/Desktop/apax-weather-app/src/test/java/com/lambdaschool/foundation/services/UserServiceImplTestNoDB.java
+/Users/ginabethrussell/Desktop/apax-weather-app/src/test/java/com/lambdaschool/foundation/FoundationApplicationTesting.java
+/Users/ginabethrussell/Desktop/apax-weather-app/src/test/java/com/lambdaschool/foundation/controllers/UserControllerIntegrationTest.java
 /Users/ginabethrussell/Desktop/apax-weather-app/src/test/java/com/lambdaschool/foundation/SeedData.java
+/Users/ginabethrussell/Desktop/apax-weather-app/src/test/java/com/lambdaschool/foundation/services/LocationServiceImplTestNoDB.java
