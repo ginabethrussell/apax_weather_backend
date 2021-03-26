@@ -284,7 +284,7 @@ public class LocationServiceImplTestNoDB
         assertEquals(newLocation.getZipcode(),
             addedLocation.getZipcode());
     }
-    
+
 
     @Test(expected = ResourceNotFoundException.class)
     public void saveNotFound() throws Exception
